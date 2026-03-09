@@ -8,7 +8,7 @@ function App() {
   const [selectedSystem, setSelectedSystem] = useState('Novasoft')
   const [uploadedFile, setUploadedFile] = useState(null)
   const [fileName, setFileName] = useState('')
-  const [customFileName, setCustomFileName] = useState('')
+  const [customFileName, setCustomFileName] = useState('Cliente_2026_Medios Magneticos')
   const [isProcessing, setIsProcessing] = useState(false)
   const [dragActive, setDragActive] = useState(false)
   const [showModal, setShowModal] = useState(false)
@@ -128,8 +128,7 @@ function App() {
           ? customFileName.trim() 
           : `${customFileName.trim()}.xlsx`
       } else {
-        const timestamp = new Date().toISOString().slice(0, 10).replace(/-/g, '')
-        downloadFileName = `Formato_DIAN_${selectedSystem}_${timestamp}.xlsx`
+        downloadFileName = 'Cliente_2026_Medios Magneticos.xlsx'
       }
       saveAs(blob, downloadFileName)
 
@@ -223,10 +222,6 @@ function App() {
       }
       
       sumRow.commit()
-      
-    } else if (system === 'Midasoft') {
-      // Mapeo para Midasoft (por implementar)
-      console.log('Mapeo de Midasoft pendiente de implementar')
     }
   }
 
@@ -305,9 +300,6 @@ function App() {
           templateWorksheet[cellAddress] = createCell(inputRow[j], existingCell)
         }
       }
-    } else if (system === 'Midasoft') {
-      // Mapeo para Midasoft (por implementar)
-      console.log('Mapeo de Midasoft pendiente de implementar')
     }
   }
 
@@ -342,7 +334,7 @@ function App() {
               </div>
               <div className="header-text">
                 <h1>Solutions & Payroll</h1>
-                <p className="subtitle">Formato DIAN - Nómina</p>
+                <p className="subtitle">Medios Magneticos - Nómina</p>
               </div>
             </div>
             <div className="welcome-box">
@@ -390,8 +382,8 @@ function App() {
                 <li>
                   <span className="step-number">1</span>
                   <div>
-                    <strong>Selecciona el sistema de origen</strong>
-                    <p>Elige entre Novasoft o Midasoft según tu sistema de nómina</p>
+                    <strong>Carga tu archivo de nómina</strong>
+                    <p>Asegúrate de que sea un archivo Excel exportado desde Novasoft</p>
                   </div>
                 </li>
                 <li>
@@ -444,7 +436,6 @@ function App() {
                     className="select-input"
                   >
                     <option value="Novasoft">Novasoft</option>
-                    <option value="Midasoft">Midasoft</option>
                   </select>
                 </div>
 
@@ -461,7 +452,7 @@ function App() {
                     id="fileNameInput"
                     value={customFileName}
                     onChange={(e) => setCustomFileName(e.target.value)}
-                    placeholder="Ingresa el nombre del archivo (opcional)"
+                    placeholder="Nombre del archivo"
                     className="select-input"
                   />
                   <p className="hint">Si no especificas un nombre, se generará automáticamente</p>
