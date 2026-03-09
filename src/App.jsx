@@ -382,26 +382,19 @@ function App() {
                 <li>
                   <span className="step-number">1</span>
                   <div>
-                    <strong>Carga tu archivo de nómina</strong>
-                    <p>Asegúrate de que sea un archivo Excel exportado desde Novasoft</p>
-                  </div>
-                </li>
-                <li>
-                  <span className="step-number">2</span>
-                  <div>
                     <strong>Ingresa el nombre del archivo (opcional)</strong>
                     <p>Puedes personalizar el nombre del archivo resultante</p>
                   </div>
                 </li>
                 <li>
-                  <span className="step-number">3</span>
+                  <span className="step-number">2</span>
                   <div>
                     <strong>Carga tu archivo Excel</strong>
-                    <p>Arrastra o selecciona el archivo con los datos de nómina</p>
+                    <p>Arrastra o selecciona el archivo con los datos que vienen de Novasoft</p>
                   </div>
                 </li>
                 <li>
-                  <span className="step-number">4</span>
+                  <span className="step-number">3</span>
                   <div>
                     <strong>Procesa y descarga</strong>
                     <p>El sistema convertirá automáticamente al formato DIAN</p>
@@ -455,7 +448,7 @@ function App() {
                     placeholder="Nombre del archivo"
                     className="select-input"
                   />
-                  <p className="hint">Si no especificas un nombre, se generará automáticamente</p>
+                  <p className="hint">Si no especificas un nombre, se generará con el nombre "Cliente_2026_Medios Magneticos"</p>
                 </div>
 
                 <div className="form-group">
